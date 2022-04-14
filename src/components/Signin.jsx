@@ -7,7 +7,7 @@ import "./Signin.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import Snackbar from 'node-snackbar';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // .email('email is required')
 const validate = Yup.object({
   email: Yup.string().required("email is required"),
@@ -22,11 +22,11 @@ const initialState = {
 };
 
 function Signin() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const handleSubmit = async (values, helper) => {
     helper.setSubmitting(true);
 
-    const response = await axios
+    await axios
       .post(`https://reqres.in/api/login`, {
         email: values.email,
         password: values.password,
